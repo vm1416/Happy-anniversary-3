@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Happy 3 Years, mi amorcito ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=MedievalSharp&display=swap" rel="stylesheet">
+
+<!-- Confetti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<style>
+/* HEART CURSOR */
+html, body {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='24' font-size='24'>❤️</text></svg>") 16 16, auto;
+}
+button, a {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='24' font-size='24'>💖</text></svg>") 16 16, pointer;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+
+body{
+  background:radial-gradient(circle at top,hsl(330,60%,18%),hsl(300,40%,8%));
+  color:hsl(50,100%,88%);
+  font-family:'MedievalSharp',cursive;
+  overflow-x:hidden;
+}
+
+/* rows */
+.rose-row,.sparkle-row{text-align:center;user-select:none;white-space:nowrap}
+.rose-row{font-size:20px;padding:6px 0}
+.sparkle-row{
+  font-size:18px;
+  letter-spacing:.5em;
+  background:linear-gradient(90deg,hsl(300,30%,10%),hsl(340,60%,20%),hsl(300,30%,10%))
+}
+
+/* layout */
+.container{max-width:780px;margin:auto;padding:20px;position:relative;z-index:2}
+.center{text-align:center}
+
+/* hero */
+h1{
+  font-family:'Cinzel Decorative',serif;
+  font-size:clamp(2.5rem,6vw,4rem);
+  color:hsl(340,100%,60%);
+  text-shadow:0 0 15px hsl(330,100%,60%);
+  font-style:italic;
+}
+
+/* cards */
+.card{
+  background:rgba(40,0,25,.65);
+  border:3px double hsl(330,60%,40%);
+  border-radius:14px;
+  padding:24px;
+  margin:24px 0;
+  box-shadow:0 0 25px rgba(255,105,180,.25);
+}
+
+/* counter */
+.counter{
+  font-size:1.4rem;
+  color:hsl(45,100%,70%);
+  text-shadow:0 0 10px hsl(45,100%,55%);
+}
+
+/* falling emojis */
+.falling{position:fixed;inset:0;pointer-events:none;z-index:0}
+.falling span{
+  position:absolute;
+  top:-10%;
+  opacity:.6;
+  animation:fall linear infinite;
+}
+@keyframes fall{to{transform:translateY(120vh)}}
+
+/* stars */
+.star{
+  position:fixed;
+  border-radius:50%;
+  background:hsl(45,100%,85%);
+  box-shadow:0 0 6px hsl(330,100%,70%),0 0 12px hsl(340,100%,50%);
+  animation:twinkle 3s infinite ease-in-out;
+}
+@keyframes twinkle{50%{opacity:.3}}
+
+/* buttons */
+.buttons{position:relative;min-height:120px}
+button{
+  border-radius:10px;
+  font-family:'Cinzel Decorative',serif;
+}
+#yesBtn{
+  padding:14px 32px;
+  font-size:1.2rem;
+  background:linear-gradient(135deg,hsl(340,100%,50%),hsl(330,100%,65%));
+  color:#fff;
+  border:3px solid hsl(45,100%,55%);
+  box-shadow:0 0 25px hsl(340,80%,55%);
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1);
+}
+#noBtn{
+  padding:8px 16px;
+  font-size:.9rem;
+  background:hsl(300,30%,20%);
+  color:hsl(330,60%,50%);
+  border:1px solid hsl(330,40%,30%);
+  position:absolute;
+}
+
+.hidden{display:none}
+
+/* gifs */
+.gifs{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-top:16px;
+}
+.gifs img{
+  width:180px;
+  border-radius:12px;
+  box-shadow:0 0 25px rgba(255,105,180,.6);
+}
+
+/* footer */
+.footer{
+  width:100%;
+  text-align:center;
+  padding:12px 0;
+  background:hsl(300,30%,8%);
+}
+.footer p{
+  margin:4px 0;
+  font-size:12px;
+}
+.footer .line1{color:hsl(330,60%,50%)}
+.footer .line2{user-select:none}
+</style>
+</head>
+
+<body>
+
+<!-- LOCAL MUSIC (PUT perfecta.mp4 NEXT TO THIS HTML FILE) -->
+<audio id="bgMusic" loop>
+  <source src="perfecta.mp4" type="audio/mp4">
+</audio>
+
+<div class="falling" id="falling"></div>
+
+<script>
+/* stars */
+for(let i=0;i<50;i++){
+  const s=document.createElement('div');
+  s.className='star';
+  s.style.width=s.style.height=(1+Math.random()*3)+'px';
+  s.style.left=Math.random()*100+'%';
+  s.style.top=Math.random()*100+'%';
+  s.style.animationDelay=Math.random()*5+'s';
+  document.body.appendChild(s);
+}
+</script>
+
+<div class="rose-row">🌹💋🌹❤️🌹💋🌹❤️🌹💋🌹❤️🌹💋🌹</div>
+<div class="sparkle-row">✨💖✨💖✨💖✨💖✨</div>
+
+<div class="container center">
+
+<h1>Happy 3 Years,<br>mi amorcito ❤️</h1>
+
+<div class="card counter" id="counter"></div>
+
+<div class="card">
+<pre style="white-space:pre-line;font-size:1.1rem;line-height:2.1">
+A lo largo de estos años hemos compartido
+y he conocido mucho de ti,
+y cada día que aprendo más de ti
+y de lo que eres me gustas más.
+
+Eres mi mejor amiga y mi novia.
+What else could I ask for?
+
+Eres mi persona favorita en el mundo
+y siento que eres la única persona
+que truly understands me.
+
+Espero que Dios me bendiga
+con muchos más años de tú a mi lado.
+
+Te amo mucho.
+Feliz aniversario mi amor.
+</pre>
+</div>
+
+<div class="card" id="question">
+<h2>Will you be my Valentine? 💕</h2>
+<div class="buttons">
+  <button id="yesBtn">YES 💖</button>
+  <button id="noBtn">NO 🙈</button>
+</div>
+</div>
+
+<div class="card hidden" id="answer">
+<h2 style="color:hsl(340,100%,60%)">YAY!!! I love you 😻💖</h2>
+<div class="gifs">
+  <img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" alt="happy dancing cat">
+  <img src="https://media.giphy.com/media/13borq7Zo2kulO/giphy.gif" alt="happy excited cat">
+</div>
+<div style="font-size:2rem;margin-top:10px">💖💕❤️💗💖💕❤️💗💖</div>
+</div>
+
+</div>
+
+<div class="sparkle-row">✨💖✨💖✨💖✨💖✨</div>
+<div class="rose-row">🌹💋🌹❤️🌹💋🌹❤️🌹💋🌹❤️🌹💋🌹</div>
+
+<div class="footer">
+  <p class="line1">Made with all my love 💖 Feliz aniversario 🌹</p>
+  <p class="line2">💖✨💖✨💖✨💖✨💖</p>
+</div>
+
+<script>
+/* ========= LIVE COUNTER ========= */
+const startDate = new Date("2023-02-13T00:00:00");
+function updateCounter(){
+  const now=new Date();
+  let diff=Math.floor((now-startDate)/1000);
+  const d=Math.floor(diff/86400); diff%=86400;
+  const h=Math.floor(diff/3600); diff%=3600;
+  const m=Math.floor(diff/60);
+  const s=diff%60;
+  document.getElementById('counter').textContent=
+    `We've been together for ${d} days ${h} hours ${m} minutes ${s} seconds 🤍`;
+}
+setInterval(updateCounter,1000); updateCounter();
+
+/* falling emojis */
+const emojis=["💖","❤️","🌹","💋","✨","💕","💗","🥀","💘"];
+const falling=document.getElementById('falling');
+for(let i=0;i<30;i++){
+  const e=document.createElement('span');
+  e.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+  e.style.left=Math.random()*100+'%';
+  e.style.fontSize=(14+Math.random()*20)+'px';
+  e.style.animationDuration=(6+Math.random()*8)+'s';
+  e.style.animationDelay=Math.random()*8+'s';
+  falling.appendChild(e);
+}
+
+/* ========= MUSIC FADE IN ========= */
+const music = document.getElementById("bgMusic");
+music.volume = 0;
+
+function fadeInMusic(){
+  music.play().catch(()=>{});
+  let v = 0;
+  const fade = setInterval(()=>{
+    v += 0.01;
+    if(v >= 0.6){
+      music.volume = 0.6;
+      clearInterval(fade);
+    } else {
+      music.volume = v;
+    }
+  }, 120);
+}
+
+/* buttons logic */
+let scale=1;
+const no=document.getElementById('noBtn');
+const yes=document.getElementById('yesBtn');
+
+no.onmouseenter=no.ontouchstart=()=>{
+  scale+=.15;
+  yes.style.transform=`scale(${scale})`;
+  no.style.left=Math.random()*200+'px';
+  no.style.top=Math.random()*80+'px';
+};
+
+yes.onclick=()=>{
+  document.getElementById('question').classList.add('hidden');
+  document.getElementById('answer').classList.remove('hidden');
+
+  fadeInMusic();
+
+  confetti({
+    particleCount:320,
+    spread:150,
+    origin:{y:0.6},
+    colors:["#ff69b4","#ff1493","#ffd700","#ff0000"]
+  });
+};
+</script>
+
+</body>
+</html>
